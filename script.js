@@ -1,7 +1,5 @@
-const GOPHER_IMAGE =
-  "https://cdn.glitch.com/a3c0d2a1-79fe-4ed8-8b4a-99cf0cc5de3a%2Fgopher.png?v=1603729753153";
-const GOPHER_SONG =
-  "https://cdn.glitch.com/a3c0d2a1-79fe-4ed8-8b4a-99cf0cc5de3a%2Fgophersong.mp3?v=1603738144988";
+const GOPHER_IMAGE = "gopher.png";
+const GOPHER_SONG = "gophersong.mp3";
 
 const GOPHER_POSITIONS = ["top", "right", "bottom", "left"];
 
@@ -66,7 +64,8 @@ function playSongAndStartGophers() {
 
       const songDuration = gopherSongAudio.duration * 1000;
       const hahaDidYouGetMeDuration = 2000;
-      const endingTimeout = songDuration - countdownDuration - hahaDidYouGetMeDuration
+      const endingTimeout =
+        songDuration - countdownDuration - hahaDidYouGetMeDuration;
       setTimeout(() => {
         clearInterval(gophersInterval);
         generateGopher({ bigGopher: true });
