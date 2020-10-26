@@ -6,18 +6,23 @@ a gopher game overlay for OBS, for [rosco](https://www.twitch.tv/roscomcc)
 
 ## using in OBS
 
-there's two ways, using the online link or downloading. downloading the files will be more reliable as you won't need to download anything on the fly and if the website goes down it will 100% work. the downside to downloading is you'll need to download each time.
+there's two ways, using the online link or downloading. downloading the files will be more reliable as you won't need to download anything on the fly and if the website goes down it will 100% work. the downside to downloading is you'll need to download each time if there's updates. you could have both and keep the local version as a backup.
 
 both options use the `Browser` source with the following settings:
 
 |Option|Value|
 |-|-|
-|URL|https://zaccolley.github.io/gophers/|
 |FPS|60|
 |Width|1280|
 |Height|720|
 |✅|Shutdown source when not visible|
 |✅|Refresh browser when not visible|
+
+## Online hoster version
+
+|Option|Value|
+|-|-|
+|URL|https://zaccolley.github.io/gophers/|
 
 ## More reliable download version
 
@@ -28,4 +33,3 @@ both options use the `Browser` source with the following settings:
   |Option|Value|
   |-|-|
   |Local file|/Users/zac/Documents/gophers/index.html|
-4. Use the rest of the options from above
