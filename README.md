@@ -18,7 +18,7 @@ both options use the `Browser` source with the following settings:
 |✅|Shutdown source when not visible|
 |✅|Refresh browser when not visible|
 
-## Online hoster version
+## Online hosted version
 
 |Option|Value|
 |-|-|
