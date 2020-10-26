@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.gopher {
+  position: absolute;
+  animation-fill-mode: forwards;
+  opacity: 1 !important;
+}
+
+.gopher--left {
+  left: 0;
+  animation-name: leftIn;
+}
+
+@keyframes leftIn {
+  0%, 100% { transform: rotate(90deg) translateY(100%); }
+  50%, { opacity: 1; transform: rotate(90deg) translateY(0%); }
+}
+
+.gopher--top {
+  top: 0;
+  animation-name: topIn;
+}
+
+@keyframes topIn {
+  0%, 100% { transform: rotate(180deg) translateY(100%); }
+  50% { opacity: 1; transform: rotate(180deg) translateY(0%); }
+}
+
+.gopher--right {
+  right: 0;
+  animation-name: rightIn;
+}
+
+@keyframes rightIn {
+  0%, 100% { transform: rotate(-90deg) translateY(100%); }
+  50%{ opacity: 1; transform: rotate(-90deg) translateY(0%); }
+}
+
+.gopher--bottom {
+  bottom: 0;
+  animation-name: bottomIn;
+}
+
+@keyframes bottomIn {
+  0%, 100% { transform: rotate(0deg) translateY(100%); }
+  45%, 65% { opacity: 1; transform: rotate(0deg) translateY(0%); }
+}
