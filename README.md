@@ -32,4 +32,4 @@ both options use the `Browser` source with the following settings:
   
   |Option|Value|
   |-|-|
-  |Local file|/Users/zac/Documents/gophers/index.html|
+  |Local file|/Users/zac/Documents/gophers-main/index.html|
