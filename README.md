@@ -33,3 +33,28 @@ both options use the `Browser` source with the following settings:
 | Option     | Value                                        |
 | ---------- | -------------------------------------------- |
 | Local file | /Users/zac/Documents/gophers-main/index.html |
+
+## Query params
+
+You can use the following query params:
+
+| Option             | Value                                                      |
+| ------------------ | ---------------------------------------------------------- |
+| ?showPlayButton    | Shows a play button as autoplay doesnt work in development |
+| ?disableOccurances | Disables random occurances                                 |
+
+## Building while developing
+
+### Installation
+
+```bash
+npm install
+```
+
+### Running
+
+```bash
+npm start
+```
+
+This will build and watch for file changes. And host the files on localhost:5000.
