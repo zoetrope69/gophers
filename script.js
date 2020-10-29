@@ -11,35 +11,39 @@ gopherSongAudio.addEventListener("canplaythrough", () => {
   canPlayThroughGopherSong = true;
 });
 
+function randomlyPositionGopher(gopherImage) {
+  const randomPosition =
+    GOPHER_POSITIONS[Math.floor(Math.random() * GOPHER_POSITIONS.length)];
+  gopherImage.className = `gopher gopher--${randomPosition}`;
+
+  const randomPercentage = Math.round(Math.floor(Math.random() * 5)) * 20;
+  if (randomPosition === "top" || randomPosition === "bottom") {
+    gopherImage.style.left = `${randomPercentage}%`;
+  } else if (randomPosition === "right" || randomPosition === "left") {
+    gopherImage.style.top = `${randomPercentage}%`;
+  }
+}
+
 function generateGopher({ bigGopher = false } = {}) {
-  const image = bigGopher
+  const gopherImage = bigGopher
     ? new Image(403 / 1.5, 419 / 1.5)
     : new Image(403 / 2, 419 / 2);
-  image.src = GOPHER_IMAGE;
+  gopherImage.src = GOPHER_IMAGE;
 
   const duration = bigGopher ? 3 : 2;
   const durationMilliseconds = duration * 1000;
-  image.style.animationDuration = `${duration}s`;
+  gopherImage.style.animationDuration = `${duration}s`;
 
   if (bigGopher) {
-    image.className = `gopher gopher--bottom gopher--big`;
-    image.style.right = "10px";
+    gopherImage.className = `gopher gopher--bottom gopher--big`;
+    gopherImage.style.right = "10px";
   } else {
-    const randomPosition =
-      GOPHER_POSITIONS[Math.floor(Math.random() * GOPHER_POSITIONS.length)];
-    image.className = `gopher gopher--${randomPosition}`;
-
-    const randomPercentage = Math.round(Math.floor(Math.random() * 5)) * 20;
-    if (randomPosition === "top" || randomPosition === "bottom") {
-      image.style.left = `${randomPercentage}%`;
-    } else if (randomPosition === "right" || randomPosition === "left") {
-      image.style.top = `${randomPercentage}%`;
-    }
+    randomlyPositionGopher(gopherImage);
   }
 
-  image.addEventListener("load", () => {
-    document.body.appendChild(image);
-    setTimeout(() => image.remove(), durationMilliseconds);
+  gopherImage.addEventListener("load", () => {
+    document.body.appendChild(gopherImage);
+    setTimeout(() => gopherImage.remove(), durationMilliseconds);
   });
 }
 
@@ -55,7 +59,7 @@ function playSongAndStartGophers() {
     5. stop generating gophers and generate a big gopher
   */
   gopherSongAudio.addEventListener("play", () => {
-    const countdownDuration = 10400;
+    const countdownDuration = 9600;
     setTimeout(() => {
       const gophersInterval = setInterval(() => {
         generateGopher();
@@ -88,4 +92,20 @@ function launchGophers() {
   }
 }
 
-launchGophers();
+/*
+  in browsers it often complains at autoplay, so for debug we add a
+  ?showPlayButton to the end of the URL to allow us to start it with
+  a button
+*/
+const searchParams = new URLSearchParams(window.location.search);
+if (searchParams.has("showPlayButton")) {
+  const buttonElem = document.createElement("button");
+  buttonElem.innerText = "Play Gophers";
+  buttonElem.addEventListener("click", () => {
+    launchGophers();
+    buttonElem.remove();
+  });
+  document.body.append(buttonElem);
+} else {
+  launchGophers();
+}

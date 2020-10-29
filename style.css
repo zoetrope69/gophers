@@ -12,6 +12,12 @@ body {
   position: relative;
 }
 
+button {
+  width: 100vh;
+  height: 100vh;
+  font-size: 5em;
+}
+
 .gopher {
   position: absolute;
   animation-fill-mode: forwards;
@@ -24,8 +30,14 @@ body {
 }
 
 @keyframes leftIn {
-  0%, 100% { transform: rotate(90deg) translateY(100%); }
-  50%, { opacity: 1; transform: rotate(90deg) translateY(0%); }
+  0%,
+  100% {
+    transform: rotate(90deg) translateY(100%);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(90deg) translateY(0%);
+  }
 }
 
 .gopher--top {
@@ -34,8 +46,14 @@ body {
 }
 
 @keyframes topIn {
-  0%, 100% { transform: rotate(180deg) translateY(100%); }
-  50% { opacity: 1; transform: rotate(180deg) translateY(0%); }
+  0%,
+  100% {
+    transform: rotate(180deg) translateY(100%);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(180deg) translateY(0%);
+  }
 }
 
 .gopher--right {
@@ -44,8 +62,14 @@ body {
 }
 
 @keyframes rightIn {
-  0%, 100% { transform: rotate(-90deg) translateY(100%); }
-  50%{ opacity: 1; transform: rotate(-90deg) translateY(0%); }
+  0%,
+  100% {
+    transform: rotate(-90deg) translateY(100%);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(-90deg) translateY(0%);
+  }
 }
 
 .gopher--bottom {
@@ -54,6 +78,13 @@ body {
 }
 
 @keyframes bottomIn {
-  0%, 100% { transform: rotate(0deg) translateY(100%); }
-  45%, 65% { opacity: 1; transform: rotate(0deg) translateY(0%); }
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(100%);
+  }
+  45%,
+  65% {
+    opacity: 1;
+    transform: rotate(0deg) translateY(0%);
+  }
 }
