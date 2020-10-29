@@ -2,7 +2,7 @@
 
 a gopher game overlay for OBS, for [rosco](https://www.twitch.tv/roscomcc)
 
-<img src="gopher.png" alt="A gopher" width="100px" />
+<img src="images/gopher-original.png" alt="A gopher" width="100px" />
 
 ## using in OBS
 
@@ -10,26 +10,26 @@ there's two ways, using the online link or downloading. downloading the files wi
 
 both options use the `Browser` source with the following settings:
 
-|Option|Value|
-|-|-|
-|FPS|60|
-|Width|1280|
-|Height|720|
-|✅|Shutdown source when not visible|
-|✅|Refresh browser when not visible|
+| Option | Value                            |
+| ------ | -------------------------------- |
+| FPS    | 60                               |
+| Width  | 1280                             |
+| Height | 720                              |
+| ✅     | Shutdown source when not visible |
+| ✅     | Refresh browser when not visible |
 
 ## Online hosted version
 
-|Option|Value|
-|-|-|
-|URL|https://zaccolley.github.io/gophers/|
+| Option | Value                                |
+| ------ | ------------------------------------ |
+| URL    | https://zaccolley.github.io/gophers/ |
 
 ## More reliable download version
 
 1. [Download the website code from here](https://github.com/zaccolley/gophers/archive/main.zip)
 2. Unzip and stick somewhere familiar
 3. Use the `Local file` option instead of `URL` and point it at the `index.html` file in the folder for example:
-  
-  |Option|Value|
-  |-|-|
-  |Local file|/Users/zac/Documents/gophers-main/index.html|
+
+| Option     | Value                                        |
+| ---------- | -------------------------------------------- |
+| Local file | /Users/zac/Documents/gophers-main/index.html |
