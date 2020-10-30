@@ -1,6 +1,6 @@
 const { hasSearchParam, shuffleArray } = require("./utils");
 
-const RANDOM_OCCURANCES = [{ type: "fast", chancePercentage: 5 }];
+const RANDOM_OCCURANCES = [{ type: "fast", chancePercentage: 100 }];
 
 function generateRandomOccurance() {
   // if we want the random occurances to stop add ?disableOccurances=true
