@@ -140,7 +140,7 @@ debugPlayButton(launchGophers);
 },{"./gophers":1,"./randomOccurances":3,"./song":4,"./utils":5}],3:[function(require,module,exports){
 const { hasSearchParam, shuffleArray } = require("./utils");
 
-const RANDOM_OCCURANCES = [{ type: "fast", chancePercentage: 100 }];
+const RANDOM_OCCURANCES = [{ type: "fast", chancePercentage: 5 }];
 
 function generateRandomOccurance() {
   // if we want the random occurances to stop add ?disableOccurances=true
