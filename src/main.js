@@ -58,7 +58,7 @@ async function launchGophers() {
       if (twitchChat) {
         if (randomOccurance === "rosco") {
           twitchChat.sendMessage(
-            "Image illustration by peiyun: https://twitter.com/_peiyen/status/1322384780239888384"
+            "Rosco illustration by Pei Yen: https://twitter.com/_peiyen/status/1322384780239888384"
           );
         }
       }
