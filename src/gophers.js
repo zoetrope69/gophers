@@ -1,8 +1,25 @@
 const { createDurationSeconds } = require("./song");
+const getRandomOccurance = require("./random-occurances");
+const randomOccurance = getRandomOccurance();
 
-const GOPHER_IMAGE = "images/gopher-original.png";
-const GOPHER_IMAGE_WIDTH = 403;
-const GOPHER_IMAGE_HEIGHT = 419;
+function getGopherImage() {
+  if (randomOccurance === "rosco") {
+    return "rosco.png";
+  }
+
+  return "gopher-original.png";
+}
+
+function getGopherSize() {
+  if (randomOccurance === "rosco") {
+    return [287, 450];
+  }
+
+  return [403, 419];
+}
+
+const GOPHER_IMAGE = `images/${getGopherImage()}`;
+const [GOPHER_IMAGE_WIDTH, GOPHER_IMAGE_HEIGHT] = getGopherSize();
 
 const GOPHER_POSITIONS = ["top", "right", "bottom", "left"];
 
