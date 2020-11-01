@@ -6,6 +6,14 @@ function hasSearchParam(param) {
   return searchParams.has(param);
 }
 
+function getSearchParam(param) {
+  const searchParams = new URLSearchParams(window.location.search);
+  if (!searchParams) {
+    return "";
+  }
+  return searchParams.get(param);
+}
+
 function shuffleArray(array) {
   var currentIndex = array.length,
     temporaryValue,
@@ -28,5 +36,6 @@ function shuffleArray(array) {
 
 module.exports = {
   hasSearchParam,
+  getSearchParam,
   shuffleArray,
 };

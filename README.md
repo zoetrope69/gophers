@@ -42,6 +42,8 @@ You can use the following query params:
 | ------------------ | ---------------------------------------------------------- |
 | ?showPlayButton    | Shows a play button as autoplay doesnt work in development |
 | ?disableOccurances | Disables random occurances                                 |
+| ?oAuth             | oAuth token for a chat bot                                 |
+| ?channel           | channel name                                               |
 
 ## Building while developing
 

@@ -8,16 +8,26 @@ const {
   resetSongPlaybackRate,
   setSongPlaybackRate,
 } = require("./song");
-const getRandomOccurance = require("./randomOccurances");
+const getRandomOccurance = require("./random-occurances");
+const initTwitchChat = require("./twitch-chat");
+
+const twitchChat = initTwitchChat();
 
 async function launchGophers() {
   const randomOccurance = getRandomOccurance();
+
+  await songReady();
 
   if (randomOccurance === "fast") {
     setSongPlaybackRate(2);
   }
 
-  await songReady();
+  let gopherEndingRoscoAudio;
+  if (randomOccurance === "rosco") {
+    gopherEndingRoscoAudio = new Audio("songs/end-rosco.mp3");
+    gopherEndingRoscoAudio.preload = true;
+  }
+
   await playSong();
 
   function afterCountdown() {
@@ -40,6 +50,18 @@ async function launchGophers() {
       resetSongPlaybackRate();
       gophersIntervals.forEach(clearInterval);
       generateEndingGopher();
+
+      if (gopherEndingRoscoAudio) {
+        gopherEndingRoscoAudio.play();
+      }
+
+      if (twitchChat) {
+        if (randomOccurance === "rosco") {
+          twitchChat.sendMessage(
+            "Image illustration by peiyun: https://twitter.com/_peiyen/status/1322384780239888384"
+          );
+        }
+      }
     }
 
     const songDuration = createDurationSeconds(getSongDuration());

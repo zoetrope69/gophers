@@ -1,18 +1,17 @@
-const GOPHER_SONG = "songs/gopher-original.mp3";
+const getRandomOccurance = require("./random-occurances");
+const randomOccurance = getRandomOccurance();
 
 const PLAYBACK_RATE_DEFAULT = 1;
 
-const gopherSongAudio = new Audio(GOPHER_SONG);
-gopherSongAudio.preload = true;
-gopherSongAudio.playbackRate = PLAYBACK_RATE_DEFAULT; // min is 0.5, max 4 really
-gopherSongAudio.preservesPitch = true;
-gopherSongAudio.webkitPreservesPitch = true;
-gopherSongAudio.mozPreservesPitch = true;
+let gopherSongAudio;
 
-let canPlayThroughGopherSong = false;
-gopherSongAudio.addEventListener("canplaythrough", () => {
-  canPlayThroughGopherSong = true;
-});
+function getGopherSong() {
+  if (randomOccurance === "rosco") {
+    return "gophers-rosco.mp3";
+  }
+
+  return "gophers-original.mp3";
+}
 
 function setSongPlaybackRate(value) {
   gopherSongAudio.playbackRate = value;
@@ -23,9 +22,12 @@ function resetSongPlaybackRate() {
 }
 
 function songReady() {
-  if (canPlayThroughGopherSong) {
-    return Promise.resolve();
-  }
+  gopherSongAudio = new Audio(`songs/${getGopherSong()}`);
+  gopherSongAudio.preload = true;
+  gopherSongAudio.playbackRate = PLAYBACK_RATE_DEFAULT; // min is 0.5, max 4 really
+  gopherSongAudio.preservesPitch = true;
+  gopherSongAudio.webkitPreservesPitch = true;
+  gopherSongAudio.mozPreservesPitch = true;
 
   return new Promise((resolve) => {
     gopherSongAudio.addEventListener("canplaythrough", resolve);
