@@ -7,7 +7,10 @@ function getGopherImage() {
     return "rosco.png";
   }
 
-  return "gopher-original.png";
+  // delete after xmas
+  return "gopher-xmas.png";
+
+  // return "gopher-original.png"
 }
 
 function getGopherSize() {
@@ -15,7 +18,11 @@ function getGopherSize() {
     return [287, 450];
   }
 
-  return [403, 419];
+  
+  // delete after xmas
+  return [403, 553];
+
+  // return [403, 419];
 }
 
 const GOPHER_IMAGE = `images/${getGopherImage()}`;

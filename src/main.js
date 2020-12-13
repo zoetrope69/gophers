@@ -28,6 +28,23 @@ async function launchGophers() {
     gopherEndingRoscoAudio.preload = true;
   }
 
+  // delete after xmas
+  jingleBellsAudio = new Audio("songs/jingle-bells.mp3");
+  jingleBellsAudio.preload = true;
+  jingleBellsAudio.loop = true;
+  jingleBellsAudio.play();
+  hoHoHoMerryChristmasAudio = new Audio("songs/ho-ho-ho-merry-christmas.mp3");
+  hoHoHoMerryChristmasAudio.preload = true;
+  hoHoHoMerryChristmasAudio.loop = true;
+  hoHoHoMerryChristmasAudio.play();
+  happyChristmasAudio = new Audio("songs/happy-christmas.mp3");
+  happyChristmasAudio.preload = true;
+  happyChristmasAudio.loop = true;
+  happyChristmasAudio.play();
+  xmasEndingAudio = new Audio("songs/merry-xmas-ending.mp3");
+  xmasEndingAudio.preload = true;
+ 
+
   await playSong();
 
   function afterCountdown() {
@@ -50,6 +67,12 @@ async function launchGophers() {
       resetSongPlaybackRate();
       gophersIntervals.forEach(clearInterval);
       generateEndingGopher();
+
+      // delete after xmas
+      jingleBellsAudio.pause();
+      hoHoHoMerryChristmasAudio.pause();
+      happyChristmasAudio.pause();
+      xmasEndingAudio.play();
 
       if (gopherEndingRoscoAudio) {
         gopherEndingRoscoAudio.play();
