@@ -1,6 +1,6 @@
 # gophers OBS overlay
 
-a gopher game overlay for OBS, for [rosco](https://www.twitch.tv/roscomcc)
+a [gopher game overlay](https://clips.twitch.tv/ExquisiteArbitraryLapwingSoonerLater) for OBS, for [rosco](https://www.twitch.tv/rosco)
 
 <img src="images/gopher-original.png" alt="A gopher" width="100px" />
 
