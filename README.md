@@ -22,11 +22,11 @@ both options use the `Browser` source with the following settings:
 
 | Option | Value                                |
 | ------ | ------------------------------------ |
-| URL    | https://zaccolley.github.io/gophers/ |
+| URL    | https://zactopus.github.io/gophers/ |
 
 ## More reliable download version
 
-1. [Download the website code from here](https://github.com/zaccolley/gophers/archive/main.zip)
+1. [Download the website code from here](https://github.com/zactopus/gophers/archive/main.zip)
 2. Unzip and stick somewhere familiar
 3. Use the `Local file` option instead of `URL` and point it at the `index.html` file in the folder for example:
 
