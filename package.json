@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zaccolley/gophers.git"
+    "url": "git+https://github.com/zactopus/gophers.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zaccolley/gophers/issues"
+    "url": "https://github.com/zactopus/gophers/issues"
   },
-  "homepage": "https://github.com/zaccolley/gophers#readme",
+  "homepage": "https://github.com/zactopus/gophers#readme",
   "devDependencies": {
     "browserify": "^17.0.0",
     "concurrently": "^5.3.0",
